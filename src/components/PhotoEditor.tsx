@@ -42,6 +42,17 @@ const FRAME_STYLES = [
     value: "bg-gradient-to-br from-orange-400 via-pink-500 to-purple-600",
     downloadStyle: "linear-gradient(to bottom right, rgb(251, 146, 60), rgb(236, 72, 153), rgb(147, 51, 234))",
   },
+  {
+    name: "Yellow Retro",
+    value: "bg-yellow-300 border-4 border-black",
+    downloadStyle: "rgb(253, 224, 71)",
+  },
+  {
+    name: "Purple Retro",
+    value: "bg-purple-500 border-4 border-pink-300 shadow-[4px_4px_0_#000]",
+    textStyle: "text-yellow-200 [text-shadow:2px_2px_0_#4c1d95]",
+    downloadStyle: "rgb(168, 85, 247)",
+  },
 ];
 
 const PhotoEditor = ({ photos, onBack }: PhotoEditorProps) => {
@@ -62,7 +73,6 @@ const PhotoEditor = ({ photos, onBack }: PhotoEditorProps) => {
     document.body.appendChild(container);
 
     try {
-      // Process each photo
       for (const photo of photos) {
         const imgContainer = document.createElement("div");
         imgContainer.style.padding = "12px";
@@ -116,13 +126,13 @@ const PhotoEditor = ({ photos, onBack }: PhotoEditorProps) => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-violet-800 p-6">
-      <div className="bg-white rounded-lg p-6 shadow-xl max-w-4xl mx-auto my-10">
+    <div className="min-h-screen bg-rose-50">
+      <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-[8px_8px_0px_rgba(0,0,0,1)] p-6">
         <div className="flex justify-between items-center mb-8">
           <button onClick={onBack} className="text-gray-600 hover:text-gray-800 font-semibold flex items-center gap-2">
             <span>← Back to Photos</span>
           </button>
-          <h2 className="text-3xl font-bold text-center text-purple-600">Edit Photos</h2>
+          <h2 className="h-12 border-black border-2 p-2.5 bg-[#B277F3] hover:bg-[#9B5FE0] hover:shadow-[2px_2px_0px_rgba(0,0,0,1)] active:bg-[#6e38a3] md:text-2l font-bold text-black ">Edit Photos</h2>
         </div>
 
         <div className="mb-8">
@@ -148,11 +158,11 @@ const PhotoEditor = ({ photos, onBack }: PhotoEditorProps) => {
               </div>
             ))}
           </div>
-          <p className="text-white text-center mt-4 text-sm text-shadow">made by tiosatrio100</p>
+          <p className="text-white text-center mt-4 md:text-2xl text-shadow">made by tiosatrio100</p>
         </div>
 
         <div className="flex justify-center mt-8">
-          <button onClick={downloadPhotos} className="bg-green-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-green-700 transition-colors">
+          <button onClick={downloadPhotos} className="h-12 border-black border-2 p-2.5 bg-[#B277F3] hover:bg-[#9B5FE0] hover:shadow-[2px_2px_0px_rgba(0,0,0,1)] active:bg-[#6e38a3] rounded-full md:text-2l font-bold text-black">
             Download Photos
           </button>
         </div>
